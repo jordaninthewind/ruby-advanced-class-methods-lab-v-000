@@ -2,7 +2,7 @@ class Song
   attr_accessor :name, :artist_name
   @@all = []
 
-  def initialize
+  def initialize(name=nil)
     @@all << self
   end
 
@@ -19,8 +19,8 @@ class Song
     return @@all.last
   end
 
-  def self.new_by_name
-
+  def self.new_by_name(name)
+    @name = name
   end
 
   def self.create_by_name
