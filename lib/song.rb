@@ -15,7 +15,7 @@ class Song
   end
 
   def self.create
-    @@all << self
+    self.save
     return @@all.last
   end
 
