@@ -4,7 +4,6 @@ class Song
 
   def initialize(name)
     @@all << name
-    return name
   end
 
   def self.all
@@ -15,8 +14,9 @@ class Song
     self.class.all << self
   end
 
-  def self.create
-
+  def self.create(name)
+    initialize(name)
+    return name
   end
 
   def self.new_by_name
