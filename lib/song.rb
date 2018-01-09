@@ -58,8 +58,13 @@ class Song
     return song
   end
 
-  def self.create_from_filename
-
+  def self.create_from_filename(name)
+    # take apart filename
+    name = name.split(" - ")
+    song = self.new(name[1].split(".")[0])
+    song.artist_name = name[0]
+    # make new song instance
+    song.save
   end
 
   def self.destroy_all
